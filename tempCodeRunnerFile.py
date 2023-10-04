@@ -1,0 +1,1 @@
+len(char_list)+1

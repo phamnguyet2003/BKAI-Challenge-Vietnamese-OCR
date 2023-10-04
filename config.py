@@ -11,9 +11,9 @@ class ModelConfigs(BaseModelConfigs):
         self.height = 64
         self.width = 128
         self.max_label_len = 32
-        self.epochs = 300        
+        self.epochs = 100        
         self.batch_size = 8
-        self.learning_rate = 0.0001
+        self.learning_rate = 0.001
         self.train_workers = 4
         self.logging = 'tensorboard'
-        self.checkpoint = 'trained_model\last_crnn.pt'
+        self.checkpoint = None

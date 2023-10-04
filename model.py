@@ -1,52 +1,54 @@
 import torch
 import torch.nn as nn
 import torch.nn.init as init
+from torchsummary import summary
 
 class CRNN(nn.Module):
     def __init__(self, num_classes, drop_out_rate = 0.35):
         super().__init__()
+
         #CNN
         self.conv1 = nn.Sequential(
         nn.Conv2d(in_channels=1, out_channels=64, kernel_size=3, padding='same', bias=True),
         nn.BatchNorm2d(num_features=64),
-        nn.LeakyReLU(),
+        nn.ReLU(),
         nn.MaxPool2d(kernel_size=2, stride=(2,2))
         )
         self.conv2 = nn.Sequential(
         nn.Conv2d(in_channels=64, out_channels=128, kernel_size=3, padding='same', bias=True),
         nn.BatchNorm2d(num_features=128),
-        nn.LeakyReLU(),
+        nn.ReLU(),
         nn.MaxPool2d(kernel_size=2, stride=(2,2))
         )
         self.conv3 = nn.Sequential(
         nn.Conv2d(in_channels=128, out_channels=256, kernel_size=3, padding='same', bias=True),
         nn.BatchNorm2d(num_features=256),
-        nn.LeakyReLU(),
+        nn.ReLU(),
         )
         self.conv4 = nn.Sequential(
         nn.Conv2d(in_channels=256, out_channels=256, kernel_size=3, padding='same', bias=True),
         nn.Dropout(drop_out_rate),
         nn.BatchNorm2d(num_features=256),
-        nn.LeakyReLU(),
+        nn.ReLU(),
         nn.MaxPool2d(kernel_size=(2,1), stride=(2,1))
         )
         self.conv5 = nn.Sequential(
         nn.Conv2d(in_channels=256, out_channels=512, kernel_size=3, padding='same', bias=True),
         nn.BatchNorm2d(num_features=512),
-        nn.LeakyReLU(),
+        nn.ReLU(),
         )
         self.conv6 = nn.Sequential(
         nn.Conv2d(in_channels=512, out_channels=512, kernel_size=3, padding='same', bias=True),
         nn.Dropout(drop_out_rate),
         nn.BatchNorm2d(num_features=512),
-        nn.LeakyReLU(),
+        nn.ReLU(),
         nn.MaxPool2d(kernel_size=(2,1), stride=(2,1))     
         )   
         self.conv7 = nn.Sequential(
         nn.Conv2d(in_channels=512, out_channels=512, kernel_size=2, padding='same', bias=True),
         nn.Dropout(0.25),
         nn.BatchNorm2d(num_features=512),
-        nn.LeakyReLU()
+        nn.ReLU()
         )
 
         self.fc1 = nn.Sequential(
