@@ -1,5 +1,7 @@
 # BKAI-Challenge-Vietnamese-OCR
 BKAI-NAVER 2023 - Track 2: OCR
+
+Vietnamese Handwritten Text Recognition, using PyTorch framework
 ### All of files in this branch is fitted with Kaggle Environment
 ### DATASET: 
 
