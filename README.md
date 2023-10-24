@@ -1,8 +1,8 @@
 # BKAI-Challenge-Vietnamese-OCR
 BKAI-NAVER 2023 - Track 2: OCR
 
-### Chủ đề. Cuộc thi Vietnamese Handwritten Text Recognition tập trung vào giải quyết bài toán "Nhận dạng văn bản chữ viết tay Tiếng Việt ".
-#### Nhiệm vụ. Cuộc thi tập trung duy nhất vào một nhiệm vụ: nhận dạng chữ viết tay tiếng Việt.
+### Vietnamese Handwritten Text Recognition Competition.
+#### Task. Recognize Vietnamese Handwritten Text.
 
 ### DATASET: 
 The data provided by the organizers consists of three sets as follows:
